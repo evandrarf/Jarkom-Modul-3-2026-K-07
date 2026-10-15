@@ -1,0 +1,9 @@
+# /etc/network/interfaces (kirara)
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+    address 10.67.4.7
+    netmask 255.255.255.0
+    gateway 10.67.4.1

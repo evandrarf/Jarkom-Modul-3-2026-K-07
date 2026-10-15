@@ -1,0 +1,8 @@
+# /etc/network/interfaces (kugisaki)
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+    hwaddress ether 02:42:4d:36:26:00
+    hostname kugisaki

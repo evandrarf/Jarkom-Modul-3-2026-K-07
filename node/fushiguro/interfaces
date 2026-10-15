@@ -1,0 +1,8 @@
+# /etc/network/interfaces (fushiguro)
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+    hwaddress ether 02:42:6c:31:39:00
+    hostname fushiguro
