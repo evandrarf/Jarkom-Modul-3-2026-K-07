@@ -1,0 +1,8 @@
+# /etc/network/interfaces (okkotsu)
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+    hwaddress ether 02:42:cc:a2:9e:00
+    hostname okkotsu

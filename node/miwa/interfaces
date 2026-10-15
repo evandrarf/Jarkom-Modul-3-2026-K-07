@@ -1,0 +1,8 @@
+# /etc/network/interfaces (miwa)
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+    hwaddress ether 02:42:12:55:91:00
+    hostname miwa

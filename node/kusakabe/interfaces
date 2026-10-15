@@ -1,0 +1,8 @@
+# /etc/network/interfaces (kusakabe)
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+    hwaddress ether 02:42:a2:f9:8e:00
+    hostname kusakabe

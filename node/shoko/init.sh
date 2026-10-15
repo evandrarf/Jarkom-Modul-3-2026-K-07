@@ -1,0 +1,10 @@
+#!/bin/bash
+# /root/init.sh (shoko)
+if [ -f /root/interfaces ]; then
+    cp /root/interfaces /etc/network/interfaces
+fi
+ip addr flush dev eth0 2>/dev/null
+ip addr add 10.67.1.3/24 dev eth0 2>/dev/null
+ip link set eth0 up 2>/dev/null
+ip route replace default via 10.67.1.1 dev eth0 2>/dev/null
+echo "nameserver 192.168.122.1" > /etc/resolv.conf

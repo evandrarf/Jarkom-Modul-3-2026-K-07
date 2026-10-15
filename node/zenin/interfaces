@@ -1,0 +1,8 @@
+# /etc/network/interfaces (zenin)
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+    hwaddress ether 02:42:31:40:9f:00
+    hostname zenin

@@ -1,0 +1,5 @@
+# /etc/default/isc-dhcp-relay (jichi)
+SERVERS="10.67.4.10"
+INTERFACES="eth2 eth3 eth4"
+OPTIONS=""
+
