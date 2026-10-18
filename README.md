@@ -891,16 +891,20 @@ dig @127.0.0.1 jujutsu.k07.com SOA +short
 dig @10.67.1.2 jujutsu.k07.com SOA +short
 dig @10.67.1.3 jujutsu.k07.com SOA +short
 ```
+
+
 ##### Serial Sebelum dinaikkan `(2026101403)`
 
 ![dig](images/soal-11/shokobefore.png)
+
+
 *Sebelum serial dinaikkan, shoko masih menampilkan serial lama `2026101403`. Setelah serial master dinaikkan menjadi `2026101404`, shoko otomatis menarik data baru dan menampilkan serial yang sama.*
 
 ![dig](images/soal-11/shokoafter.png) <br>
 
 #### Bukti Client Bisa Query ke Master dan Slave (Itadori)
 
-![dig](images/soal-11/shokobefore.png)
+![dig](images/soal-11/client.png)
 
 ---
 
@@ -1588,8 +1592,10 @@ for i in 1 2 3; do wget -S -O /dev/null -T 5 http://jujutsu.k07.com/ 2>&1 | grep
 
 for i in $(seq 1 30); do wget -S -O /dev/null -T 5 http://jujutsu.k07.com/api 2>&1 | grep -E "HTTP/"; done | sort | uniq -c
 ```
-#### Bukti Rate Limir & Cache `MISS` lalu `HIT`
+#### Bukti Rate Limit & Cache `MISS` lalu `HIT`
 Tiga request berturut-turut ke halaman yang sama menghasilkan `MISS`, `HIT`, `HIT`. 
+
+![](images/soal-19/ratelimit.png)
 
 Tiga puluh request paralel dikirim ke `/api`. Sebagian kecil berhasil (`200 OK`), sedangkan sisanya ditolak dengan `503 Service Unavailable` karena melampaui batas 10 request per detik.
 
